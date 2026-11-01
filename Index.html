@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Triveni Balpande | Portfolio</title>
+<style>
+  body { margin:0; font-family:Arial, sans-serif; background:#f4f6fb; color:#222; }
+  nav { position:sticky; top:0; background:#4a3aff; display:flex; justify-content:center; gap:20px; padding:14px; }
+  nav a { color:white; text-decoration:none; font-weight:bold; }
+  section { padding:50px 20px; max-width:700px; margin:auto; }
+  h1, h2 { color:#4a3aff; }
+  .card { background:white; padding:15px; border-radius:10px; margin:10px 0; box-shadow:0 2px 6px #0002; }
+  input, select, textarea, button { width:100%; padding:10px; margin:6px 0; box-sizing:border-box; }
+  button { background:#4a3aff; color:white; border:none; border-radius:6px; font-size:16px; }
+  #msg { font-weight:bold; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#home">Home</a>
+  <a href="#skills">Skills</a>
+  <a href="#projects">Projects</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<section id="home">
+  <h1>Hi, I'm Triveni Balpande</h1>
+  <p>BCA Student at Atash College, Pandhurna and Web Development Intern at Saiket Systems.</p>
+  <p>Email: trivenibalpande08@gmail.com</p>
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="card">HTML</div>
+  <div class="card">CSS</div>
+  <div class="card">JavaScript (Basics)</div>
+  <div class="card">Responsive Web Design</div>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="card">
+    <b>Medicare Nagar</b><br>
+    A healthcare website.<br>
+    <a href="https://medicare-nagar.netlify.app" target="_blank">View Project</a>
+  </div>
+  <div class="card">
+    <b>Forever Together Invite</b><br>
+    An online invitation website.<br>
+    <a href="https://forever-together-invite.netlify.app" target="_blank">View Project</a>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact Me</h2>
+  <input id="name" placeholder="Your name">
+  <input id="email" placeholder="Your email">
+  <select id="topic">
+    <option value="">Select topic</option>
+    <option>Internship</option>
+    <option>Project</option>
+  </select>
+  <textarea id="text" placeholder="Message"></textarea>
+  <label><input type="checkbox" id="agree" style="width:auto"> I agree to be contacted</label>
+  <button onclick="sendForm()">Send</button>
+  <p id="msg"></p>
+</section>
+
+<script>
+function sendForm() {
+  var name = document.getElementById("name").value.trim();
+  var email = document.getElementById("email").value.trim();
+  var topic = document.getElementById("topic").value;
+  var agree = document.getElementById("agree").checked;
+  var msg = document.getElementById("msg");
+
+  if (name === "" || !email.includes("@") || topic === "" || !agree) {
+    msg.style.color = "red";
+    msg.innerText = "Please fill all fields correctly.";
+  } else {
+    msg.style.color = "green";
+    msg.innerText = "Thank you, " + name + "! Message sent.";
+  }
+}
+</script>
+</body>
+</html>
